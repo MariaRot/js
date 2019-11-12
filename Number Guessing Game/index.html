@@ -7,22 +7,30 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <title>Document</title>
 </head>
+<style>
+#game {
+  text-align: center;
+  margin: auto;
+}
+</style>
 <body>
-  <form class="number">
-      <legend>Mă gândesc la un număr între 0 și <span id="legend"></span>. <br>La ce număr mă gândesc?</legend>
-      <br>
-      <input type="text" 
-        name="number" 
-        id="number"
-        placeholder="Numar"
-      >
-      <br><br>
-      <button type="submit">Ghiceste!</button>
-  </form>
-  <br>
-  <button onclick="reset()">Joc nou</button>
-  <br><br>
-  <div id="countdown"></div>
+  <div id="game">
+    <form class="number">
+        <legend>Mă gândesc la un număr între 0 și <span id="legend"></span>. <br>La ce număr mă gândesc?</legend>
+        <br>
+        <input type="text" 
+          name="number" 
+          id="number"
+          placeholder="Numar"
+        >
+        <br><br>
+        <button type="submit">Ghiceste!</button>
+    </form>
+    <br>
+    <button onclick="reset()">Joc nou</button>
+    <br><br>
+    <div id="countdown"></div>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
