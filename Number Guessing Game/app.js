@@ -3,7 +3,11 @@ var inputNumber = document.getElementById('number'),
   maxNumber = 10,
   generatedNumber = 0,
   difficulty = document.getElementById('difficulty'),
-  option = document.getElementById('options');
+  option = document.getElementById('options'),
+  legendElement = document.getElementById('legend'),
+  counterElement = document.getElementById('countdown'),
+  timeleft = 100,
+  timer;
 
   var difficultyMap = {
     easy: 10,
@@ -13,18 +17,25 @@ var inputNumber = document.getElementById('number'),
   document.getElementById('legend').innerHTML =  maxNumber;
   var selectedDifficulty=difficultyMap['easy'];
 
+function startTimer() {
+  timeleft = 100;
+  timer = setInterval(function(){
+    counterElement.innerHTML = 'Mai ai ' + timeleft + ' secunde' ;
+    timeleft -= 1;
+    if(timeleft <= 0) {
+      alert('Ai pierdut! :(');
+      newGame(selectedDifficulty);
+    }
+  }, 1000);
+}
+
 function newGame(difLevel) {
-  if (difLevel == 10) {
-    maxNumber = 10;
-  }
-  else if (difLevel == 100) {
-    maxNumber = 100;
-  }
-  else if (difLevel ===1000) {
-    maxNumber = 1000;
-  }
-  document.getElementById('legend').innerHTML =  maxNumber;
+  clearInterval(timer);
+  inputNumber.value = '';
+  maxNumber = difLevel;
+  legendElement.innerHTML =  maxNumber;
   generatedNumber = Math.ceil(Math.random() * maxNumber);
+  startTimer();
   selectedDifficulty=difLevel;
   console.log(generatedNumber);
 }
@@ -56,16 +67,8 @@ form.addEventListener('submit', function(e) {
 }, false);
 
 
-  // var timeleft = 100;
-  // var downloadTimer = setInterval(function(){
-  //   document.getElementById("countdown").innerHTML = "Mai ai " + timeleft + " secunde" ;
-  //   timeleft -= 1;
-  //   if(timeleft <= 0){
-  //     clearInterval(downloadTimer);
-  //     alert('Ai pierdut! :(');
-  //     newGame(selectedDifficulty);
-  //   }
-  // }, 1000);
+  
+
 
   
 
