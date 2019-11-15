@@ -27,10 +27,47 @@
         <button type="submit">Ghiceste!</button>
     </form>
     <br>
-    <button onclick="reset()">Joc nou</button>
+
+    <form class="dif" id="options">
+      <fieldset>
+          <legend>Optiuni</legend>
+          <label for="difficulty">Dificultate</label>
+          <br>
+          <select name="difficulty" id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+          <br><br>
+          <input type="submit" value="Accept">
+          <br><br>
+          <input type="reset" value="Joc nou">
+        </fieldset>
+  </form>
+
+    
     <br><br>
     <div id="countdown"></div>
   </div>
   <script src="app.js"></script>
 </body>
 </html>
+
+<!-- 
+  
+          <input type="radio" 
+          name="difficulty" 
+          value="easy"
+          > Usor 
+
+          <input type="radio" 
+          name="difficulty" 
+          value="medium"
+          > Mediu 
+
+          <input type="radio" 
+          name="difficulty" 
+          value="hard"
+          > Greu <br>
+
+ -->
