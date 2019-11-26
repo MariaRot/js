@@ -55,3 +55,21 @@ person.friends.forEach(function(friend){
   }
 }); 
 console.log(sum);
+
+console.warn('*****************');
+let summ = 0;
+person.friends.forEach(function(friend) {
+  summ += (new Date()).getFullYear() - friend.age;
+});
+console.log(summ);
+
+console.warn('********************');
+person.friends.forEach(function(friend) {
+  let dif = Math.abs(person.age - friend.age);
+  console.log(`Diferenta este de ${dif} ani.`);
+})
+
+console.warn('***********');
+person.friends.reverse().forEach(function(friend) {
+  console.log(`${friend.name} ${friend.surname}`);
+});
