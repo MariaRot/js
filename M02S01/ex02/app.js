@@ -16,16 +16,30 @@ class Vehicle {
   }
 
   displaySpeed() {
-    console.log('Viteza curenta este: ', this.speed);
+    console.log(`Viteza curenta este: ${this.speed}`);
+  }
+
+  restrictSpeed(intendedSpeed) {
+    if (intendedSpeed > this.topSpeed) {
+      intendedSpeed = this.topSpeed;
+    }
+
+    if(intendedSpeed < this.topReverseSpeed) {
+      intendedSpeed = this.topReverseSpeed;
+    }
+
+    return intendedSpeed;
   }
 
   accelerate() {
-    this.speed++;
+    let intendedSpeed = this.speed + 1;
+    this.speed = this.restrictSpeed(intendedSpeed);
     this.displaySpeed();
   }
 
   decelerate() {
-    this.speed--;
+    let intendedSpeed = this.speed - 1;
+    this.speed = this.restrictSpeed(intendedSpeed);
     this.displaySpeed();
   }
 
@@ -70,10 +84,16 @@ class Bicycle extends Vehicle {
   }
 
   decelerate() {
-    if (--this.speed < 0) {
-      this.speed = 0;
+    let intendedSpeed = this.speed--;
+    if (intendedSpeed < 0) {
+      this.speed = this.topReverseSpeed;
     }
 
     this.displaySpeed();
   }
 }
+
+
+let bike = new Bicycle('Pegas','red',8,20);
+let car = new Car('Audi', 'red', 100, 200,50);
+let veh = new Vehicle('Audi', 'red',4, 100, 200,50);

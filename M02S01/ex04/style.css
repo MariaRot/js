@@ -2,7 +2,7 @@
   width: 200px;
   height: 200px;
   border: 1px solid #000;
-  position: absolute; 
+  position: relative; 
 }
 
 .car {
