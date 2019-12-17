@@ -23,11 +23,28 @@
       
       <br><br>
 
+      <label for="skill">Adauga skill</label>
+      <input type="text" name="skill" id="addSkillInput">
+      <button type="button" id="addSkill">+</button>
+
+      <br><br>
+
+      <input type="checkbox" name="hasPets" id="hasPets">
+      <label for="hasPets">Are animale de companie?</label>
+
       <button type="submit">Adauga</button>
     </fieldset>
 
-    <fieldset>
+    <fieldset id="pet" style="display:none;">
+      <label for="petName"></label>
+      <input type="text" id="petName" name="petName">
+
+    </fieldset>
+
+    <fieldset >
       <legend>Detalii</legend>
+      <div id="details">
+      </div>
     </fieldset>
   </form>
 
