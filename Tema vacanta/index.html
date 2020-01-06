@@ -10,7 +10,9 @@
     <style>
         body {
             background-image: url('https://images.pexels.com/photos/2706654/pexels-photo-2706654.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
-            background-size:cover;
+            background-size:100%;
+            background-repeat: no-repeat;
+            background-color:black;
             text-align: center;
             margin: auto;
         }
@@ -23,6 +25,9 @@
         }
         li {
             color:white;
+        }
+        li button {
+            border-radius: 70%;
         }
 
     </style>
@@ -39,16 +44,17 @@
         <label for="surname">Prenume:</label>
         <input type="text" name="surname" id="surname"> 
 
-        <button type="button" id="addPerson">+</button>
-
+        <button type="button" class="btn btn-light" style="border-radius: 70%" id="addPerson">+</button>
+        <br><br>
         <h1 id="winner"></h1>
+        <br><br>
         <div >
           <h1>Lista participanti</h1>
           <ul id="list">
           </ul>
         </div>
         <br>
-        <button type="submit">Alege castigator</button>
+        <button type="submit" class="btn btn-light">Alege castigator</button>
       </form>
       <script src="app.js"></script>
 </body>
