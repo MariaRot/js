@@ -18,3 +18,21 @@ let person = {
     age: 29
   }]
 };
+
+
+let [skill1,,skill3] = person.skills;
+let p = document.createElement('p');
+p.innerHTML = `Cunosc ${skill1} si ${skill3}.`;
+document.body.appendChild(p);
+
+let [,steven] = person.friends;
+let {name: friend2Name, 
+  surname: friend2Surname,
+  age: friend2Age
+} = steven;
+
+let p2 = document.createElement('p');
+p2.innerText = `Ma numesc ${friend2Name} si am ${friend2Age}`;
+document.body.appendChild(p2);
+
+let {petOwner: hasPet} = person;
