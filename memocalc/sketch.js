@@ -3,10 +3,11 @@
 var drops = [];
 var buckets = [];
 function setup() {
-  createCanvas(1000, 700);
+  createCanvas(1250, 700);
   buckets[0] = new Bucket(buckets);
   buckets[1] = new Bucket(buckets);
   buckets[2] = new Bucket(buckets);
+  buckets[2].maxCapacity =100000;
 
   buckets[0].setup();
   buckets[1].setup();
